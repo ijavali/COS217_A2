@@ -45,7 +45,6 @@ static size_t replaceAndWrite(const char *pcLine, const char *pcFrom,
         /* Get the pointer to the leftmost occurence of pcFrom in our current
         position, ptr, to the end of pcLine. Then advance ptr and print out all
         the characters in pcLine until the occurence of pcFrom. */
-        // location = Str_search(ptr, pcFrom);
         while (ptr != location) {
             printf("%c", *ptr);
             ptr++;
