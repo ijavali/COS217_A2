@@ -25,6 +25,7 @@ static size_t replaceAndWrite(const char *pcLine, const char *pcFrom,
     const char *ptr;
     size_t pcFromLength;
     size_t count = 0;
+    size_t i;
 
     assert(pcLine != NULL);
     assert(pcFrom != NULL);
@@ -38,7 +39,6 @@ static size_t replaceAndWrite(const char *pcLine, const char *pcFrom,
     while (*ptr != '0' && Str_search(ptr, pcFrom) != NULL) {
         char *location;
         count++;
-        size_t i;
         /* Get the pointer to the leftmost occurence of pcFrom in our current
         position, ptr, to the end of pcLine. Then advance ptr and print out all
         the characters in pcLine until the occurence of pcFrom. */
