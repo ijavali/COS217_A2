@@ -20,7 +20,7 @@ size_t Str_getLength(const char *pcSrc) {
 }
 
 char *Str_copy(char *pcDest, const char *pcSrc) {
-    char *dest, *src;
+    const char *dest, *src;
     assert(pcDest != NULL);
     assert(pcSrc != NULL);
     dest = pcDest;
@@ -35,7 +35,7 @@ char *Str_copy(char *pcDest, const char *pcSrc) {
 }
 
 char *Str_concat(const char *pcDest, const char *pcSrc) {
-    char *dest, *src;
+    const char *dest, *src;
     assert(pcDest != NULL);
     assert(pcSrc != NULL);
     dest = pcDest;
@@ -51,7 +51,7 @@ char *Str_concat(const char *pcDest, const char *pcSrc) {
 }
 
 int Str_compare(const char *str1, const char *str2) {
-    char *pointer1, *pointer2;
+    const char *pointer1, *pointer2;
     assert(str1 != NULL);
     assert(str2 != NULL);
     pointer1 = str1;
@@ -75,7 +75,7 @@ int Str_compare(const char *str1, const char *str2) {
 }
 
 const char *Str_search(const char *str1, const char *str2) {
-    char *pointer1, *pointer2;
+    const char *pointer1, *pointer2;
     assert(str1 != NULL);
     assert(str2 != NULL);
     pointer1 = str1;
