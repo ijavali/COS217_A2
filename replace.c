@@ -53,7 +53,6 @@ static size_t replaceAndWrite(const char *pcLine, const char *pcFrom,
         /* "Replace" pcFrom with pcTo by advancing the ptr for pcLine and
         thereby not printing out the occurence of pcFrom. Then, print out the
         characters in pcTo */
-        // for (i = 0; i < pcFromLength; i++) ptr++;
         ptr += pcFromLength;
         i = 0;
         while (pcTo[i] != '\0') {
