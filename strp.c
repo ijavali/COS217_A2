@@ -83,7 +83,7 @@ const char *Str_search(const char *str1, const char *str2) {
     pointer1 = str1;
     pointer2 = str2;
     while (*pointer1 != '\0') {
-        char *currentI = pointer1;
+        const char *currentI = pointer1;
         while (*currentI != '\0' && *pointer2 != '\0' &&
                *currentI == *pointer2) {
             currentI++;
