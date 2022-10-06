@@ -21,7 +21,7 @@ char *Str_concat(char pcDest[], const char pcSrc[]);
 
 /* Return 0 if strings str1 and str2 are equal, 1 if  str1 comes after
  * str2 lexicographically, or -1 if str1 comes before str2 lexicographically*/
-int Str_compare(char str1[], const char str2[]);
+int Str_compare(const char str1[], const char str2[]);
 
 /* Copy the content of string str2 into string str1 and return pointer to
  * str1 string  */
