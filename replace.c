@@ -22,13 +22,12 @@ static size_t replaceAndWrite(const char *pcLine, const char *pcFrom,
                               const char *pcTo) {
     /* ptr is the pointer for string pcLine. location is the pointer for where
      * the leftmost pcFrom is found in pcLine. count keeps track of the number
-     * of replacements. i is used to advance ptr the length of pcFrom (to skip
-     * it , when needed)*/
+     * of replacements. i is used to print out the content of pcTo*/
     const char *ptr;
     char *location;
-    size_t pcFromLength;
     size_t count = 0;
     size_t i;
+    size_t pcFromLength, pcToLength;
 
     assert(pcLine != NULL);
     assert(pcFrom != NULL);
@@ -39,6 +38,7 @@ static size_t replaceAndWrite(const char *pcLine, const char *pcFrom,
     }
     ptr = pcLine;
     pcFromLength = Str_getLength(pcFrom);
+    pcToLength = Str_getLength(pcTo);
     /* Iterate while we have not reached the end of the line and there are more
      * occurences of pcFrom in ptr. */
     while (*ptr != '\0' && (location = Str_search(ptr, pcFrom)) != NULL) {
@@ -54,11 +54,7 @@ static size_t replaceAndWrite(const char *pcLine, const char *pcFrom,
         thereby not printing out the occurence of pcFrom. Then, print out the
         characters in pcTo */
         ptr += pcFromLength;
-        i = 0;
-        while (pcTo[i] != '\0') {
-            printf("%c", pcTo[i]);
-            i++;
-        }
+        for (i = 0; i < pcToLength; i++) printf("%c", pcTo[i]);
     }
     /* Print the remaining characters */
     while (*ptr != '\0') {
