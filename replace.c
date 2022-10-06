@@ -57,6 +57,11 @@ static size_t replaceAndWrite(const char *pcLine, const char *pcFrom,
             i++;
         }
     }
+    /* Print the remaining characters */
+    while (*ptr != '0') {
+        printf("%c", *ptr);
+        ptr++;
+    }
     printf("\n");
     return count;
 }
@@ -93,7 +98,7 @@ int main(int argc, char *argv[]) {
 
     while (fgets(acLine, MAX_LINE_SIZE, stdin) != NULL) {
         if (Str_getLength(pcFrom) == 0) {
-            printf("-- %s\n", acLine);
+            printf("%s\n", acLine);
         } else {
             uReplaceCount += replaceAndWrite(acLine, pcFrom, pcTo);
         }
