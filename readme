@@ -65,42 +65,7 @@ disagreements with them? Copy the critTer warnings here, and express
 your disagreement after each warning. If there are no warnings, then
 write "None."
 
-Below is the warning I get. I am not quite sure why this warning occurs and
-believe that it may be an error on critTer's end as there is no use of uLength
-after line 30 of stra.c.
-
-Checking stra.c
-Cetus Parsing Error: Exception Type: antlr.NoViableAltException
-Source: stra.c Line:63 Column: 12 token name:ID
-line 63:12: unexpected token: uLength
-	at cetus.base.grammars.NewCParser.postfixExpr(NewCParser.java:6323)
-	at cetus.base.grammars.NewCParser.unaryExpr(NewCParser.java:6752)
-	at cetus.base.grammars.NewCParser.castExpr(NewCParser.java:6191)
-	at cetus.base.grammars.NewCParser.multExpr(NewCParser.java:6053)
-	at cetus.base.grammars.NewCParser.additiveExpr(NewCParser.java:5992)
-	at cetus.base.grammars.NewCParser.shiftExpr(NewCParser.java:5931)
-	at cetus.base.grammars.NewCParser.relationalExpr(NewCParser.java:5854)
-	at cetus.base.grammars.NewCParser.equalityExpr(NewCParser.java:5793)
-	at cetus.base.grammars.NewCParser.bitAndExpr(NewCParser.java:5755)
-	at cetus.base.grammars.NewCParser.exclusiveOrExpr(NewCParser.java:5714)
-	at cetus.base.grammars.NewCParser.inclusiveOrExpr(NewCParser.java:5673)
-	at cetus.base.grammars.NewCParser.logicalAndExpr(NewCParser.java:5635)
-	at cetus.base.grammars.NewCParser.logicalOrExpr(NewCParser.java:5597)
-	at cetus.base.grammars.NewCParser.conditionalExpr(NewCParser.java:5383)
-	at cetus.base.grammars.NewCParser.assignExpr(NewCParser.java:2541)
-	at cetus.base.grammars.NewCParser.expr(NewCParser.java:1311)
-	at cetus.base.grammars.NewCParser.statement(NewCParser.java:5304)
-	at cetus.base.grammars.NewCParser.statementList(NewCParser.java:4735)
-	at cetus.base.grammars.NewCParser.compoundStatement(NewCParser.java:4440)
-	at cetus.base.grammars.NewCParser.functionDef(NewCParser.java:820)
-	at cetus.base.grammars.NewCParser.externalDef(NewCParser.java:459)
-	at cetus.base.grammars.NewCParser.externalList(NewCParser.java:360)
-	at cetus.base.grammars.NewCParser.translationUnit(NewCParser.java:321)
-	at cetus.base.grammars.CetusCParser.parseAntlr(CetusCParser.java:183)
-	at cetus.base.grammars.CetusCParser.parseFile(CetusCParser.java:65)
-	at critter2.CritterDriver.parseProgram(CritterDriver.java:42)
-	at critter2.Critter.main(Critter.java:64)
-
+None
 
 ------------------------------------------------------------------------
 What warnings does splint generate on strp.c, and what are your
@@ -124,7 +89,7 @@ disagreements with them? Copy the splint warnings here, and express your
 disagreement after each warning. If there are no warnings, then write
 "None."
 
-
+None.
 
 ------------------------------------------------------------------------
 What warnings does critTer generate on replace.c, and what are your
@@ -132,7 +97,7 @@ disagreements with them? Copy the critTer warnings here, and express
 your disagreement after each warning. If there are no warnings, then
 write "None."
 
-
+None.
 
 ------------------------------------------------------------------------
 Is it possible for Str_copy or Str_concat to call assert to verify
