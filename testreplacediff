@@ -53,6 +53,10 @@ fi
 diff __stdout1 __stdout2 > __diffout
 if [ $? != "0" ]; then
    echo "   ***** stdout is incorrect."
+   # check if $4 is not empty
+   if [ -n "$4" ]; then
+      cat __diffout
+   fi
 fi
 
 # Check the stderr streams.
