@@ -51,45 +51,46 @@ char *Str_concat(char *pcDest, const char *pcSrc) {
 }
 
 size_t Str_compare(const char *str1, const char *str2) {
-    char *p1, *p2;
+    char *pointer1, *pointer2;
     assert(str1 != NULL);
     assert(str2 != NULL);
-    p1 = str1;
-    p2 = str2;
+    pointer1 = str1;
+    pointer2 = str2;
 
-    while (*p1 != '\0' && *p2 != '\0') {
-        if (*p1 != *p2) {
-            if (*p1 > *p2)
+    while (*pointer1 != '\0' && *pointer2 != '\0') {
+        if (*pointer1 != *pointer2) {
+            if (*pointer1 > *pointer2)
                 return 1;
             else
                 return -1;
         }
-        p1++;
-        p2++;
+        pointer1++;
+        pointer2++;
     }
-    if (*p1 == '\0' && *p2 == '\0')
+    if (*pointer1 == '\0' && *pointer2 == '\0')
         return 0;
-    else if (*p1 == '\0')
+    else if (*pointer1 == '\0')
         return -1;
     return 1;
 }
 
 char *Str_search(const char *str1, const char *str2) {
-    char *p1, *p2;
+    char *pointer1, *pointer2;
     assert(str1 != NULL);
     assert(str2 != NULL);
-    p1 = str1;
-    p2 = str2;
-    while (*p1 != '\0') {
-        char *currentI = p1;
-        while (*currentI != '\0' && *p2 != '\0' && *currentI == *p2) {
+    pointer1 = str1;
+    pointer2 = str2;
+    while (*pointer1 != '\0') {
+        char *currentI = pointer1;
+        while (*currentI != '\0' && *pointer2 != '\0' &&
+               *currentI == *pointer2) {
             currentI++;
-            p2++;
+            pointer2++;
         }
-        if (*p2 == '\0') return p1;
-        p1++;
-        p2 = str2;
+        if (*pointer2 == '\0') return pointer1;
+        pointer1++;
+        pointer2 = str2;
     }
-    if (*p2 == '\0') return p1;
+    if (*pointer2 == '\0') return pointer1;
     return NULL;
 }
