@@ -35,7 +35,7 @@ char *Str_copy(char *pcDest, const char *pcSrc) {
     return pcDest;
 }
 
-char *Str_concat(const char *pcDest, const char *pcSrc) {
+char *Str_concat(char *pcDest, const char *pcSrc) {
     char *dest;
     const char *src;
     assert(pcDest != NULL);
