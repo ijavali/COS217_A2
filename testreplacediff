@@ -17,10 +17,10 @@
 #---------------------------------------------------------------------
 
 # Validate the arguments.
-if [ "$#" != "3" ]; then
-   echo "Usage: testreplacediff file fromStr toStr"
-   exit 1
-fi
+# if [ "$#" != "3" ]; then
+   # echo "Usage: testreplacediff file fromStr toStr"
+   # exit 1
+# fi
 
 # Limit the amount of CPU time consumed to 2 seconds.
 ulimit -t 2
