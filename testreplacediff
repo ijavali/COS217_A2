@@ -17,10 +17,10 @@
 #---------------------------------------------------------------------
 
 # Validate the arguments.
-# if [ "$#" != "3" ]; then
-   # echo "Usage: testreplacediff file fromStr toStr"
-   # exit 1
-# fi
+if [ "$#" != "3" ]; then
+   echo "Usage: testreplacediff file fromStr toStr"
+   exit 1
+fi
 
 # Limit the amount of CPU time consumed to 2 seconds.
 ulimit -t 2
@@ -53,10 +53,8 @@ fi
 diff __stdout1 __stdout2 > __diffout
 if [ $? != "0" ]; then
    echo "   ***** stdout is incorrect."
-   # check if $4 is not empty
-   if [ -n "$4" ]; then
-      cat __diffout
-   fi
+   cat __stdout1
+   cat __stdout2
 fi
 
 # Check the stderr streams.
