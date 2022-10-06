@@ -65,7 +65,7 @@ int Str_compare(const char str1[], const char str2[]) {
     return 1;
 }
 
-char *Str_search(const char str1[], const char str2[]) {
+const char *Str_search(const char str1[], const char str2[]) {
     size_t i = 0, j = 0;
     assert(str1 != NULL);
     assert(str2 != NULL);
