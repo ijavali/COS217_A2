@@ -97,7 +97,7 @@ int main(int argc, char *argv[]) {
 
     while (fgets(acLine, MAX_LINE_SIZE, stdin) != NULL) {
         if (Str_getLength(pcFrom) == 0) {
-            printf("%s\n", acLine);
+            printf("%s", acLine);
         } else {
             uReplaceCount += replaceAndWrite(acLine, pcFrom, pcTo);
         }
