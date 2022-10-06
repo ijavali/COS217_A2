@@ -22,7 +22,7 @@ static size_t replaceAndWrite(const char *pcLine, const char *pcFrom,
                               const char *pcTo) {
     /* ptr is the pointer for string pcLine. count keeps track of the number of
      * replacements*/
-    char *ptr;
+    const char *ptr;
     size_t pcFromLength;
     size_t count = 0;
 
