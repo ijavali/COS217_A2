@@ -62,7 +62,6 @@ static size_t replaceAndWrite(const char *pcLine, const char *pcFrom,
         printf("%c", *ptr);
         ptr++;
     }
-    printf("\n");
     return count;
 }
 
