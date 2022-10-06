@@ -75,23 +75,21 @@ size_t Str_compare(const char str1[], const char str2[]) {
 }
 
 char *Str_search(const char str1[], const char str2[]) {
-    char *dest, *src;
+    size_t i = 0, j = 0;
     assert(str1 != NULL);
     assert(str2 != NULL);
-    dest = str1;
-    src = str2;
-    while (*dest != '\0') {
-        char *currentI = dest;
-        while (*currentI != '\0' && *src != '\0' &&
-               *currentI == *src) {
+    while (str1[i] != '\0') {
+        size_t currentI = i;
+        while (str1[currentI] != '\0' && str2[j] != '\0' &&
+               str1[currentI] == str2[j]) {
             currentI++;
-            src++;
+            j++;
         }
-        if (*src == '\0') return dest;
-        dest++;
-        src++;
+        if (str2[j] == '\0') return &str1[i];
+        i++;
+        j = 0;
     }
-    if (*src == '\0') return dest;
+    if (str2[j] == '\0') return &str1[i];
     return NULL;
 }
 
