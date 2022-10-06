@@ -74,7 +74,7 @@ int Str_compare(const char *str1, const char *str2) {
     return 1;
 }
 
-char *Str_search(const char *str1, const char *str2) {
+const char *Str_search(const char *str1, const char *str2) {
     char *pointer1, *pointer2;
     assert(str1 != NULL);
     assert(str2 != NULL);
