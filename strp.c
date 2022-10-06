@@ -31,10 +31,10 @@ char *Str_copy(char *pcDest, const char *pcSrc) {
         src++;
     }
     *dest = '\0';
-    return &pcDest[0];
+    return pcDest;
 }
 
-char *Str_concat(char pcDest[], const char pcSrc[]) {
+char *Str_concat(char *pcDest, const char *pcSrc) {
     char *dest, *src;
     assert(pcDest != NULL);
     assert(pcSrc != NULL);
@@ -47,51 +47,49 @@ char *Str_concat(char pcDest[], const char pcSrc[]) {
         src++;
     }
     *dest = '\0';
-    return &pcDest[0];
+    return pcDest;
 }
 
-size_t Str_compare(const char str1[], const char str2[]) {
-    char *dest, *src;
+size_t Str_compare(const char *str1, const char *str2) {
+    char *p1, *p2;
     assert(str1 != NULL);
     assert(str2 != NULL);
-    dest = str1;
-    src = str2;
+    p1 = str1;
+    p2 = str2;
 
-    while (*dest != '\0' && *src != '\0') {
-        if (*dest != *src) {
-            if (*dest > *src)
+    while (*p1 != '\0' && *p2 != '\0') {
+        if (*p1 != *p2) {
+            if (*p1 > *p2)
                 return 1;
             else
                 return -1;
         }
-        dest++;
-        src++;
+        p1++;
+        p2++;
     }
-    if (*dest == '\0' && *src == '\0')
+    if (*p1 == '\0' && *p2 == '\0')
         return 0;
-    else if (*dest == '\0')
+    else if (*p1 == '\0')
         return -1;
     return 1;
 }
 
-char *Str_search(const char str1[], const char str2[]) {
-    char *dest, *src;
+char *Str_search(const char *str1, const char *str2) {
+    char *p1, *p2;
     assert(str1 != NULL);
     assert(str2 != NULL);
-    dest = str1;
-    src = str2;
-    while (*dest != '\0') {
-        char *currentI = dest;
-        while (*currentI != '\0' && *src != '\0' &&
-               *currentI == *src) {
+    p1 = str1;
+    p2 = str2;
+    while (*p1 != '\0') {
+        char *currentI = p1;
+        while (*currentI != '\0' && *p2 != '\0' && *currentI == *p2) {
             currentI++;
-            src++;
+            p2++;
         }
-        if (*src == '\0') return dest;
-        dest++;
-        src++;
+        if (*p2 == '\0') return p1;
+        p1++;
+        p2 = str2;
     }
-    if (*src == '\0') return dest;
+    if (*p2 == '\0') return p1;
     return NULL;
 }
-
