@@ -53,7 +53,7 @@ char *Str_concat(char *pcDest, const char *pcSrc) {
 }
 
 int Str_compare(const char *str1, const char *str2) {
-    char *pointer1, *pointer2;
+    const char *pointer1, *pointer2;
     assert(str1 != NULL);
     assert(str2 != NULL);
     pointer1 = str1;
