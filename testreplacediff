@@ -53,7 +53,9 @@ fi
 diff __stdout1 __stdout2 > __diffout
 if [ $? != "0" ]; then
    echo "   ***** stdout is incorrect."
+
    cat __stdout1
+   echo "    ------- "
    cat __stdout2
 fi
 
