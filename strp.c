@@ -1,5 +1,5 @@
 /*--------------------------------------------------------------------*/
-/* stra.c                                                             */
+/* strp.c                                                             */
 /* Author: Ishaan Javali                                              */
 /*--------------------------------------------------------------------*/
 
@@ -11,17 +11,18 @@
 #include <time.h>
 #include <unistd.h>
 
-size_t Str_getLength(const char pcSrc[]) {
-    size_t uLength = 0;
+size_t Str_getLength(const char *pcSrc) {
+    const char *pcEnd;
     assert(pcSrc != NULL);
-    while (pcSrc[uLength] != '\0') uLength++;
-    return uLength;
+    pcEnd = pcSrc;
+    while (*pcEnd != '\0') pcEnd++;
+    return (size_t)(pcEnd - pcSrc);
 }
 
-char *Str_copy(char pcDest[], const char pcSrc[]) {
-    size_t uLength = 0;
+char *Str_copy(char *pcDest, const char *pcSrc) {
     assert(pcDest != NULL);
     assert(pcSrc != NULL);
+    size_t uLength = 0;
     while (pcSrc[uLength] != '\0') {
         pcDest[uLength] = pcSrc[uLength];
         uLength++;
@@ -30,10 +31,10 @@ char *Str_copy(char pcDest[], const char pcSrc[]) {
     return &pcDest[0];
 }
 
-char *Str_concat(char pcDest[], const char pcSrc[]) {
-    size_t i = 0, j = 0;
+char *Str_concat(char *pcDest, const char *pcSrc) {
     assert(pcDest != NULL);
     assert(pcSrc != NULL);
+    size_t i = 0, j = 0;
     while (pcDest[i] != '\0') i++;
     while (pcSrc[j] != '\0') {
         pcDest[i] = pcSrc[j];
@@ -44,10 +45,10 @@ char *Str_concat(char pcDest[], const char pcSrc[]) {
     return &pcDest[0];
 }
 
-size_t Str_compare(const char str1[], const char str2[]) {
-    size_t i = 0, j = 0;
+size_t Str_compare(char *str1, const char *str2) {
     assert(str1 != NULL);
     assert(str2 != NULL);
+    size_t i = 0, j = 0;
     while (str1[i] != '\0' && str2[j] != '\0') {
         if (str1[i] != str2[j]) {
             if (str1[i] > str2[j])
@@ -65,10 +66,10 @@ size_t Str_compare(const char str1[], const char str2[]) {
     return 1;
 }
 
-char *Str_search(const char str1[], const char str2[]) {
-    size_t i = 0, j = 0;
+char *Str_search(const char *str1[], const char *str2) {
     assert(str1 != NULL);
     assert(str2 != NULL);
+    size_t i = 0, j = 0;
     while (str1[i] != '\0') {
         size_t currentI = i;
         while (str1[currentI] != '\0' && str2[j] != '\0' &&
